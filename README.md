@@ -1,4 +1,4 @@
 rez-template
 ===
 
-Template used as a base for the rez-based projects.
+Template used as a base for the Rez-based projects.

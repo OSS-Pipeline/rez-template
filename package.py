@@ -13,6 +13,7 @@ description = \
     """
 
 requires = [
+    "cmake-3+"
     "project-1.2.3"
 ]
 

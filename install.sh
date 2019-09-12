@@ -20,7 +20,7 @@ echo -e "\n"
 echo -e "[INSTALL] Installing template-${template_version}..."
 echo -e "\n"
 
-make install
+make -j${REZ_BUILD_THREAD_COUNT} install
 
 echo -e "\n"
 echo -e "[INSTALL] Finished installing template-${template_version}!"
