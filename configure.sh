@@ -1,6 +1,10 @@
 #!/usr/bin/bash
 
+# Will exit the Bash script the moment any command will itself exit with a non-zero status, thus an error.
+set -e
+
 EXTRACT_PATH=$1
+BUILD_PATH=$2
 INSTALL_PATH=${REZ_BUILD_INSTALL_PATH}
 TEMPLATE_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
@@ -27,16 +31,16 @@ echo -e "\n"
 
 # This is the most common setup, where we use a "configure" script coming with
 # the project in order to setup things up before using make on it.
-if [ -d build ]; then
-    cd build
+if [ -d ${BUILD_PATH} ]; then
+    cd ${BUILD_PATH}
 else
     # We create the same hierarchy as the one set in "BUILD_DIR" from CMakeLists.txt from here,
     # in order to make sure that the hierarchy is not affected by the CMake archive extraction script
     # in case we are creating the BUILD_DIR hierarchy in advance.
-    mkdir build
-    cd build
+    mkdir -p ${BUILD_PATH}
+    cd ${BUILD_PATH}
 
-    ../configure --prefix=${INSTALL_PATH}
+    ${EXTRACT_PATH}/configure --prefix=${INSTALL_PATH}
 fi
 
 echo -e "\n"

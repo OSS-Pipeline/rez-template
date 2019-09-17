@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+# Will exit the Bash script the moment any command will itself exit with a non-zero status, thus an error.
+set -e
+
 BUILD_PATH=$1
 TEMPLATE_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
@@ -15,7 +18,7 @@ echo -e "[INSTALL][ARGS] TEMPLATE VERSION: ${TEMPLATE_VERSION}"
 
 cd ${BUILD_PATH}
 
-# We finally install template
+# We install template
 echo -e "\n"
 echo -e "[INSTALL] Installing template-${TEMPLATE_VERSION}..."
 echo -e "\n"
