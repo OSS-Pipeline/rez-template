@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
-extract_path=$1
-install_path=$2
-template_version=$3
+EXTRACT_PATH=$1
+INSTALL_PATH=${REZ_BUILD_INSTALL_PATH}
+TEMPLATE_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
 # We print the arguments passed to the Bash script
 echo -e "\n"
@@ -11,18 +11,18 @@ echo -e "=== CONFIGURE ==="
 echo -e "================="
 echo -e "\n"
 
-echo -e "[CONFIGURE][ARGS] EXTRACT PATH: ${extract_path}"
-echo -e "[CONFIGURE][ARGS] INSTALL PATH: ${install_path}"
-echo -e "[CONFIGURE][ARGS] TEMPLATE VERSION: ${template_version}"
+echo -e "[CONFIGURE][ARGS] EXTRACT PATH: ${EXTRACT_PATH}"
+echo -e "[CONFIGURE][ARGS] INSTALL PATH: ${INSTALL_PATH}"
+echo -e "[CONFIGURE][ARGS] TEMPLATE VERSION: ${TEMPLATE_VERSION}"
 
 # This is a basic configure script, but it is possible to extend it and add more steps if necessary.
 # One such example can be found in the "rez-gcc" project.
 
-cd ${extract_path}
+cd ${EXTRACT_PATH}
 
 # We run the configuration script of template
 echo -e "\n"
-echo -e "[CONFIGURE] Running the configuration script from template-${template_version}..."
+echo -e "[CONFIGURE] Running the configuration script from template-${TEMPLATE_VERSION}..."
 echo -e "\n"
 
 # This is the most common setup, where we use a "configure" script coming with
@@ -36,9 +36,9 @@ else
     mkdir build
     cd build
 
-    ../configure --prefix=${install_path}
+    ../configure --prefix=${INSTALL_PATH}
 fi
 
 echo -e "\n"
-echo -e "[CONFIGURE] Finished configuring template-${template_version}!"
+echo -e "[CONFIGURE] Finished configuring template-${TEMPLATE_VERSION}!"
 echo -e "\n"
