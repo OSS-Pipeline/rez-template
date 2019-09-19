@@ -6,7 +6,7 @@ set -e
 BUILD_PATH=$1
 TEMPLATE_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
-# We print the arguments passed to the Bash script
+# We print the arguments passed to the Bash script.
 echo -e "\n"
 echo -e "==============="
 echo -e "=== INSTALL ==="
@@ -18,7 +18,7 @@ echo -e "[INSTALL][ARGS] TEMPLATE VERSION: ${TEMPLATE_VERSION}"
 
 cd ${BUILD_PATH}
 
-# We install template
+# We install template.
 echo -e "\n"
 echo -e "[INSTALL] Installing template-${TEMPLATE_VERSION}..."
 echo -e "\n"

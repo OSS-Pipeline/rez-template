@@ -8,7 +8,7 @@ BUILD_PATH=$2
 INSTALL_PATH=${REZ_BUILD_INSTALL_PATH}
 TEMPLATE_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
-# We print the arguments passed to the Bash script
+# We print the arguments passed to the Bash script.
 echo -e "\n"
 echo -e "================="
 echo -e "=== CONFIGURE ==="
@@ -22,9 +22,7 @@ echo -e "[CONFIGURE][ARGS] TEMPLATE VERSION: ${TEMPLATE_VERSION}"
 # This is a basic configure script, but it is possible to extend it and add more steps if necessary.
 # One such example can be found in the "rez-gcc" project.
 
-cd ${EXTRACT_PATH}
-
-# We run the configuration script of template
+# We run the configuration script of template.
 echo -e "\n"
 echo -e "[CONFIGURE] Running the configuration script from template-${TEMPLATE_VERSION}..."
 echo -e "\n"
