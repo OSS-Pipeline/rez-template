@@ -13,7 +13,7 @@ description = \
     """
 
 requires = [
-    "cmake-3"
+    "cmake-3+"
     "project-1.2.3"
 ]
 
@@ -30,8 +30,12 @@ build_system = "cmake"
 with scope("config") as config:
     config.build_thread_count = "logical_cores"
 
-#TODO: Use the SHA1 of the archive instead.
-uuid = "template-x.x.x"
+uuid = "template-{version}".format(version=str(version))
 
 def commands():
     env.PATH.prepend("{root}/my_path")
+
+    # Helper environment variables.
+    env.TEMPLATE_BINARY_PATH.set("{root}/bin")
+    env.TEMPLATE_INCLUDE_PATH.set("{root}/include")
+    env.TEMPLATE_LIBRARY_PATH.set("{root}/lib")
