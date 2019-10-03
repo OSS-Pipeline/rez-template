@@ -14,7 +14,6 @@ description = \
 
 requires = [
     "cmake-3+"
-    "project-1.2.3"
 ]
 
 variants = [
@@ -33,7 +32,7 @@ with scope("config") as config:
 uuid = "template-{version}".format(version=str(version))
 
 def commands():
-    env.PATH.prepend("{root}/my_path")
+    env.PATH.prepend("{root}/bin")
 
     # Helper environment variables.
     env.TEMPLATE_BINARY_PATH.set("{root}/bin")
